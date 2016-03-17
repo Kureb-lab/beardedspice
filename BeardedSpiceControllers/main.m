@@ -67,6 +67,10 @@ int main(int argc, const char *argv[])
     // Touch to BSCService
     [BSCService singleton];
     
+    BOOL accessibilityApiEnabled = AXIsProcessTrusted();
+    NSLog(@"AccessibilityApiEnabled %@", (accessibilityApiEnabled ? @"YES":@"NO"));
+
+    
     // Resuming the serviceListener starts this service. This method does not return.
     [listener resume];
     return 0;
